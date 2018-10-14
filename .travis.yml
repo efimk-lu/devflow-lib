@@ -9,6 +9,7 @@ install:
 - npm install --save-dev nyc
 script:
 - npm run checks
+- nom run coverage
 - codecov
 - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then ./scripts/test_integration.sh ; fi
 after_success:
