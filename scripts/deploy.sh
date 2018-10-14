@@ -7,7 +7,8 @@ setup_git() {
 }
 
 push_tags() {
-    git status
+    git stash
+    git checkout master
     git remote set-url origin https://${GITHUB_TOKEN}@github.com/efimk-lu/devflow-lib.git
     git push origin master --tags
 }
