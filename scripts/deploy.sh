@@ -7,7 +7,7 @@ setup_git() {
 }
 
 push_tags() {
-    git remote add https://${GITHUB_TOKEN}@github.com/efimk-lu/devflow-lib.git
+    git remote add origin https://${GITHUB_TOKEN}@github.com/efimk-lu/devflow-lib.git
     git push origin master --tags
 }
 
