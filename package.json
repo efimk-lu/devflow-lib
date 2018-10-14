@@ -28,7 +28,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged && npm run checks",
-      "postcommit": "git update-index --again"
+      "postcommit": "git update-ingit stdex --again"
     }
   },
   "lint-staged": {
