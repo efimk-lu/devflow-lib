@@ -9,6 +9,6 @@ describe("addTwoNumbers()", function() {
 
     let sum2 = addTwoNumbers(x, y);
 
-    expect(10).to.be.equal(sum1);
+    expect(sum2).to.be.equal(sum1);
   });
 });
