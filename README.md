@@ -1,4 +1,4 @@
-https://travis-ci.org/efimk-lu/devflow-lib.svg?branch=master
+[![Build Status](https://travis-ci.org/efimk-lu/devflow-lib.svg?branch=master)](https://travis-ci.org/efimk-lu/devflow-lib)
 
 A demo nodeJS client library used to demonstrate CI/CD principles. You can use it as a template.
 
