@@ -1,22 +1,28 @@
 language: node_js
 node_js:
-  - "8.10"
+- '8.10'
 cache:
   directories:
-    - "node_modules"
+  - node_modules
 install:
 - npm install -g codecov
 - npm install --save-dev nyc
 script:
-  - npm run checks
-  - codecov
-  - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then ./scripts/test_integration.sh ; fi # a pull request
-
-deploy:
-  provider: script
-  skip_cleanup: true
-  script: npm run semantic-release
-  on:
-    branch: master
+- npm run checks
+- codecov
+- if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then ./scripts/test_integration.sh ; fi
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+- bash <(curl -s https://codecov.io/bash)
+deploy:
+  - provider: npm
+    email: efi@lumigo.io
+    api_key:
+      secure: CWv8GFCeEPhdTA+4jB8cL0vAeu2oTI/NIwTq+F5YULMRY4l3AUQR5MTkus+KzhcuLv6kfPA5xNV0X3/EDswO4A2VCJBAGb+03yPx6svcQtZXgC8kPhZGlCYMyhcY1tS+eULipx7+wmy/NiTPlKbIqReiJD04mD+x+z9juXD4XD5DhUQN8MXnD/wr5NA3KAQExoj0pF5+PnOed+hVvVJlbwGosUHbgoSH4Gsle5mUoY6Fvd5F+4dtD4xTa29WF4x2NekbC23V40gEhPCRK0vwVDyssq0ADzu2Rcl21mGriE1R32nEYPB1bdHz8/BfKQvMxbF4fAF0xghBQ060RPB+fTmwlmNyAvspLB9mMG8/r0AhrI5FCFgC3s/OtO7HbBaL0UCLg642VE1YK/UEUR+Pl/gfLxHjbfhptZt1B4i/RchczwIMYxczrIF0Vo4qROXmb7WyTYUZNw0qupFq51sUL5FJERB+FIPsKGNokmy94BxbG0NjVgRDLTtQGZ3wUptTIX0MNtAUpGp038zjdReC1JKHxlxHL6F2vMa7LGzH/3QJN+PwZC/EEqNbyAquEXTuqaDwAe0mBOAni3XsjTZUvMV+VOsI0McOoYY7YQbbyKGgL2ArStoSc8c13M9xYDzClDiukXd89aV/sZzlx7gffjEPq9rsZ7yt/lIjlyAXSPk=
+
+#  - provider: releases
+#  skip_cleanup: true
+#  api_key:
+#    secure: K/xXZxFLz6+7GIk+ztqpBrhxL5RcZXEIOwimYK/eqs/p08e2Ad/ihJ9oXTBbs7SGx4AUOj5hpemlwAnJNcwBpeFqYTisUGDLB/fsuDwIs9r/PqXTzsvy//DbzlHZunqbhXdcmcELdzcd4+mjFPq82f7pd3lazGzaz0XSJ5YgRm/o+HTz/DWnAWJodhOVUweFaAYrKp6s1QN+BPFndgW8aLvdYGlPSsDny9FARoUt3gOJ56s67WGIMyaNhPq15CrMUu/J7r8dnjWVWV+KorKFeR6lfb3ANjfmIXa6E0vWrZoQOFBCOmLLVH5G8yJZtl77ORcAz+Iq23TEuYs9G7F6QSvnvnu4koHhSK37O8lpUQfTg8Nao7ZicctGWCxfSM/nk7/h0DM/arqAFbkojHuZC1H6nkggny8kTI9lfTd1zzmpYvxjH1ypsvoIlLGj8b/hJ54AzLWTW026IYSA3uJqrXE+1+ohd5pbYRWWoqObSecPm463aOq3iTrDXyAHmEXlsdj7KNZZKv1RYtEpgnYZvtRFeg9Kj4RqKrVnwkvm7jVBRzkPSRqW+FawsZS/8ahlylWvvsJasjBNpSEN3YX1C4ozW0mdLQF0jeEtYJG5ripYrLXzVo+b1niT+7rnPaiv423TjfL3OLj+rUxtWFkQ9UyGxQZcRyaGFE/IRTKpVm0=
+#  file: file.zip
+#  on:
+#    tags: true
