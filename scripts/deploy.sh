@@ -16,6 +16,7 @@ setup_git
 git checkout master
 echo "Bump patch version"
 npm version patch
+git statsu
 
 #echo "Push to NPM"
 #cp .base_npmrc .npmrc
