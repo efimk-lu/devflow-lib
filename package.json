@@ -8,7 +8,10 @@
     "test": "nyc mocha",
     "checks": "./scripts/checks.sh",
     "format": "lint-staged",
-    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov -t 2326b9d9-d76a-4f56-9092-347a60eec947"
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov -t 2326b9d9-d76a-4f56-9092-347a60eec947",
+    "build": "flow-remove-types src/ -d lib/",
+    "prepublish": "npm run build",
+    "flow": "flow"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +19,8 @@
     "chai": "^4.2.0",
     "eslint": "^5.6.1",
     "eslint-config-prettier": "^3.1.0",
+    "flow-bin": "^0.83.0",
+    "flow-remove-types": "^1.2.3",
     "husky": "^1.1.1",
     "lint-staged": "^7.3.0",
     "mocha": "^5.2.0",
