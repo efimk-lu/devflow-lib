@@ -5,15 +5,15 @@ cache:
   directories:
   - node_modules
 install:
-- npm install -g codecov
-- npm install --save-dev nyc
+  - npm install -g codecov
+  - npm install --save-dev nyc
 script:
-- npm run checks
-- npm run coverage
-- codecov
-- if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then ./scripts/test_integration.sh ; fi
+  - npm run checks
+  - npm run coverage
+  - codecov
+  - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then ./scripts/test_integration.sh ; fi
 after_success:
-- bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash)
 deploy:
   provider: script
   script: scripts/deploy.sh
