@@ -15,10 +15,10 @@ push_tags() {
 echo "Bump patch version"
 npm version patch
 
-echo "Push to NPM"
-cp .base_npmrc .npmrc
-npm publish
-rm .npmrc
+#echo "Push to NPM"
+#cp .base_npmrc .npmrc
+#npm publish
+#rm .npmrc
 echo "Create release tag"
 setup_git
 push_tags
