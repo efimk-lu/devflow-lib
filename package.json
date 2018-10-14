@@ -5,7 +5,7 @@
   "description": "A demo nodeJS client library used to demonstrate CI/CD principles. You can use it as a template.",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha",
+    "test": "nyc mocha -r flow-remove-types/register",
     "checks": "./scripts/checks.sh",
     "format": "lint-staged",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov -t 2326b9d9-d76a-4f56-9092-347a60eec947",
@@ -16,9 +16,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
     "chai": "^4.2.0",
     "eslint": "^5.6.1",
     "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-flowtype": "^3.0.0",
     "flow-bin": "^0.83.0",
     "flow-remove-types": "^1.2.3",
     "husky": "^1.1.1",
