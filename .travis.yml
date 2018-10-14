@@ -6,7 +6,6 @@ cache:
   - node_modules
 install:
   - npm install -g codecov
-  - npm install --save-dev nyc
 script:
   - npm run checks
   - npm run coverage

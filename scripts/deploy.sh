@@ -18,7 +18,7 @@ echo "Bump patch version"
 npm version patch -m "Bump version to %s [skip ci]"
 echo "Push to NPM"
 cp .base_npmrc .npmrc
-./node_modules/.bin/flow-remove-types ./ -d ./
+npm run flow:build
 npm publish
 rm .npmrc
 echo "Create release tag"
