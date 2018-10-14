@@ -7,10 +7,11 @@ setup_git() {
 }
 
 push_tags() {
-    git commit -am "Bumped version by travis"
-    git remote add https://${GITHUB_TOKEN}@github.com/efimk-lu/devflow-lib.git > /dev/null 2>&1
-    git push --tags
+    git remote add https://${GITHUB_TOKEN}@github.com/efimk-lu/devflow-lib.git
+    git push origin master --tags
 }
+
+setup_git
 
 echo "Bump patch version"
 npm version patch
@@ -20,7 +21,6 @@ npm version patch
 #npm publish
 #rm .npmrc
 echo "Create release tag"
-setup_git
 push_tags
 
 
