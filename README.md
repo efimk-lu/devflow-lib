@@ -1,3 +1,5 @@
+https://travis-ci.org/efimk-lu/devflow-lib.svg?branch=master
+
 A demo nodeJS client library used to demonstrate CI/CD principles. You can use it as a template.
 
 # Installation
