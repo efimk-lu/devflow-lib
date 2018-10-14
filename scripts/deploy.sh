@@ -4,17 +4,16 @@ set -e
 setup_git() {
     git config --global user.email "travis@travis-ci.org"
     git config --global user.name "Travis CI"
-    git stash
 }
 
 push_tags() {
-    git checkout master
     git remote set-url origin https://${GITHUB_TOKEN}@github.com/efimk-lu/devflow-lib.git
     git push origin master --tags
 }
 
-setup_git
 
+setup_git
+git checkout master
 echo "Bump patch version"
 npm version patch
 
