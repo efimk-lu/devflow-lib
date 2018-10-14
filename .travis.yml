@@ -18,6 +18,8 @@ deploy:
     email: efi@lumigo.io
     api_key:
       secure: CWv8GFCeEPhdTA+4jB8cL0vAeu2oTI/NIwTq+F5YULMRY4l3AUQR5MTkus+KzhcuLv6kfPA5xNV0X3/EDswO4A2VCJBAGb+03yPx6svcQtZXgC8kPhZGlCYMyhcY1tS+eULipx7+wmy/NiTPlKbIqReiJD04mD+x+z9juXD4XD5DhUQN8MXnD/wr5NA3KAQExoj0pF5+PnOed+hVvVJlbwGosUHbgoSH4Gsle5mUoY6Fvd5F+4dtD4xTa29WF4x2NekbC23V40gEhPCRK0vwVDyssq0ADzu2Rcl21mGriE1R32nEYPB1bdHz8/BfKQvMxbF4fAF0xghBQ060RPB+fTmwlmNyAvspLB9mMG8/r0AhrI5FCFgC3s/OtO7HbBaL0UCLg642VE1YK/UEUR+Pl/gfLxHjbfhptZt1B4i/RchczwIMYxczrIF0Vo4qROXmb7WyTYUZNw0qupFq51sUL5FJERB+FIPsKGNokmy94BxbG0NjVgRDLTtQGZ3wUptTIX0MNtAUpGp038zjdReC1JKHxlxHL6F2vMa7LGzH/3QJN+PwZC/EEqNbyAquEXTuqaDwAe0mBOAni3XsjTZUvMV+VOsI0McOoYY7YQbbyKGgL2ArStoSc8c13M9xYDzClDiukXd89aV/sZzlx7gffjEPq9rsZ7yt/lIjlyAXSPk=
+    on:
+      tags: true
 
 #  - provider: releases
 #  skip_cleanup: true
