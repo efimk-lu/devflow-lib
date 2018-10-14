@@ -1,6 +1,6 @@
 {
   "name": "devflow-client",
-  "version": "1.1.10",
+  "version": "1.1.11",
   "repository": "git@github.com:efimk-lu/devflow-lib.git",
   "description": "A demo nodeJS client library used to demonstrate CI/CD principles. You can use it as a template.",
   "main": "index.js",
