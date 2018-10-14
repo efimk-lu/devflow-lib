@@ -9,7 +9,7 @@
     "checks": "./scripts/checks.sh",
     "format": "lint-staged",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov -t 2326b9d9-d76a-4f56-9092-347a60eec947",
-    "build": "flow-remove-types src/ -d lib/",
+    "build": "flow-remove-types ./ -d ./",
     "prepublish": "npm run build",
     "flow": "flow"
   },
