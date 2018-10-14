@@ -141,3 +141,4 @@ fabric.properties
 
 #Misc
 coverage.lcov
+.npmrc
