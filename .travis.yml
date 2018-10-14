@@ -6,6 +6,7 @@ cache:
   - node_modules
 install:
   - npm install -g codecov
+  - npm install -g flow-remove-types
 script:
   - npm run checks
   - npm run coverage
