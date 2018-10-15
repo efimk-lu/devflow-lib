@@ -9,7 +9,7 @@ install:
   - npm install -g flow-remove-types
 script:
   - npm run checks
-  - npm run coverage
+  - npm run coverage_ci
   - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then ./scripts/test_integration.sh ; fi
 after_success:
   - bash <(curl -s https://codecov.io/bash)
