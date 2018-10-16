@@ -5,7 +5,6 @@ describe("addTwoNumbers()", function() {
   it("should add two numbers", function() {
     let x = 5;
     let y = 1;
-    let z=6;
     let sum1 = x + y;
 
     let sum2 = addTwoNumbers(x, y);
