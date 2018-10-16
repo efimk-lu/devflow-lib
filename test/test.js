@@ -8,6 +8,7 @@ describe("addTwoNumbers()", function() {
     let sum1 = x + y;
 
     let sum2 = addTwoNumbers(x, y);
+    sum2 = addTwoNumbers(x, y);
 
     expect(sum2).to.be.equal(sum1);
   });
