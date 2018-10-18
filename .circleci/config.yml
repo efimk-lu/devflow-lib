@@ -11,7 +11,9 @@ jobs:
 
 
     working_directory: ~/repo
-
+    branches:
+      only:
+        - /pull/
     steps:
     - checkout
 
