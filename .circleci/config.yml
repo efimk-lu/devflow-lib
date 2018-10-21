@@ -44,6 +44,7 @@ jobs:
     # run tests!
     - run: npm test
     - run: ./scripts/test_integration.sh
+    - run: bash <(curl -s https://codecov.io/bash)
   deploy:
     <<: *defaults
     steps:
