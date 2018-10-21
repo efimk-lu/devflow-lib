@@ -3,13 +3,26 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+  - image: circleci/node:8.10
+
+workflows:
+  version: 2
+  test-deploy:
+    jobs:
+    - test
+    - deploy:
+        requires:
+        - test
+        filters:
+          branches:
+            only: master
+
 jobs:
   test:
-    docker:
-    # specify the version you desire here
-    - image: circleci/node:8.10
-
-
+    <<: *defaults
     working_directory: ~/repo
     steps:
     - checkout
@@ -32,20 +45,11 @@ jobs:
     - run: npm test
     - run: ./scripts/test_integration.sh
   deploy:
+    <<: *defaults
     steps:
     - attach_workspace:
         at: ~/repo
     - run:
         - ./scripts/deploy.sh
-  workflows:
-    version: 2
-    test-deploy:
-      jobs:
-      - test
-      - deploy:
-          requires:
-          - test
-          filters:
-            branches:
-              only: master
+
 
