@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  build:
+  test:
     docker:
     # specify the version you desire here
     - image: circleci/node:8.10
@@ -31,5 +31,21 @@ jobs:
     # run tests!
     - run: npm test
     - run: ./scripts/test_integration.sh
-
+  deploy:
+    steps:
+    - attach_workspace:
+        at: ~/repo
+    - run:
+        - ./scripts/deploy.sh
+  workflows:
+    version: 2
+    test-deploy:
+      jobs:
+      - test
+      - deploy:
+          requires:
+          - test
+          filters:
+            branches:
+              only: master
 
