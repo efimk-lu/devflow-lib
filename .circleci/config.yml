@@ -42,7 +42,7 @@ jobs:
         key: v1-dependencies-{{ checksum "package.json" }}
 
     # run tests!
-    - run: npm test
+    - run: npm run coverage_ci
     - run: ./scripts/test_integration.sh
     - run: bash <(curl -s https://codecov.io/bash)
   deploy:
