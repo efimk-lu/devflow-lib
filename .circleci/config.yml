@@ -35,6 +35,8 @@ jobs:
         - v1-dependencies-
 
     - run: npm install
+    - run: npm install -g codecov
+    - run: npm install -g flow-remove-types
 
     - save_cache:
         paths:
